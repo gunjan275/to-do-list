@@ -1,6 +1,8 @@
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(120deg, #84fab0, #8fd3f4);
+    background: url('photo.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    background-position: top center; /* Adjust the cropping */
     margin: 0;
     display: flex;
     justify-content: center;
@@ -9,40 +11,40 @@ body {
 }
 
 .app {
-    background: white;
+    background: rgba(255, 255, 255, 0.9); /* Add transparency to make content stand out */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     width: 90%;
-    max-width: 400px;
+    max-width: 500px;
     text-align: center;
 }
 
-.input-container {
+.input-container, .search-container {
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
 }
 
-#task-input {
+#task-input, #search-input {
     flex: 1;
     padding: 10px;
-    border: 2px solid #84fab0;
+    border: 2px solid #f6d365;
     border-radius: 5px;
     font-size: 16px;
 }
 
-#add-task {
-    padding: 10px 15px;
-    background-color: #84fab0;
+#priority-selector, #add-task {
+    padding: 10px;
     border: none;
     border-radius: 5px;
+    background-color: #fda085;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-#add-task:hover {
-    background-color: #67c89b;
+#priority-selector:hover, #add-task:hover {
+    background-color: #f7835d;
 }
 
 #task-list {
@@ -59,6 +61,18 @@ body {
     background-color: #f9f9f9;
     border-radius: 5px;
     animation: fadeIn 0.5s ease;
+}
+
+.task.high {
+    border-left: 5px solid red;
+}
+
+.task.medium {
+    border-left: 5px solid orange;
+}
+
+.task.low {
+    border-left: 5px solid green;
 }
 
 .task.completed {
